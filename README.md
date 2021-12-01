@@ -1,6 +1,6 @@
-#Advent of Code 2021
+# Advent of Code 2021
 
-##Introduction
+## Introduction
 
 Each year there is an online "Advent Calendar" of coding challenges, and finally, this year, I have decided to do it.
 
