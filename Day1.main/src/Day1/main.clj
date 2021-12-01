@@ -4,10 +4,6 @@
    [clojure.string :as str])
   (:gen-class))
 
-(def test-data [1 2 1 3 4 5 1 1 2 2 4])
-(def test-data-partitioned (partition 2 1 test-data))
-(def test-data-3-measurement-sliding-windows (partition 3 1 test-data))
-
 (def actual-data (map #(Integer/parseInt %) (str/split (slurp (io/resource "input.txt")) #"\n")))
 (def actual-data-partitioned (partition 2 1 actual-data))
 (def actual-data-3-measurement-sliding-windows (partition 3 1 actual-data))
