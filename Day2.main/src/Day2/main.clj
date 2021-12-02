@@ -9,7 +9,7 @@
 (def aim (atom 0))
 
 (defn import-instructions-data
-  []
+  [filename]
   (into
    []
    (map
@@ -17,7 +17,7 @@
     (partition
      1
      (str/split
-      (slurp (io/resource "input.txt"))
+      (slurp (io/resource filename))
       #"\n")))))
 
 (defn prepare-instructions
@@ -34,16 +34,16 @@
     data)))
 
 (defn simple-nav
-  []
-  (doseq [instruction (prepare-instructions (import-instructions-data))]
+  [filename]
+  (doseq [instruction (prepare-instructions (import-instructions-data filename))]
     (cond
       (= "forward" (first instruction)) (swap! horizontal-pos + (last instruction))
       (= "up" (first instruction)) (swap! depth-pos - (last instruction))
       (= "down" (first instruction)) (swap! depth-pos + (last instruction)))))
 
 (defn complex-nav
-  []
-  (doseq [instruction (prepare-instructions (import-instructions-data))]
+  [filename]
+  (doseq [instruction (prepare-instructions (import-instructions-data filename))]
     (cond
       (= "forward" (first instruction)) (do
                                           (swap! horizontal-pos + (last instruction))
@@ -61,8 +61,8 @@
 (defn -main
   []
   (zero-atoms)
-  (simple-nav)
+  (simple-nav "input.txt")
   (println "Simple Nav Result -> " (* @horizontal-pos @depth-pos))
   (zero-atoms)
-  (complex-nav)
+  (complex-nav "input.txt")
   (println "Complex Nav Result -> " (* @horizontal-pos @depth-pos)))
