@@ -21,6 +21,11 @@
             (map #(Character/digit % 10) vec)))
     fuel-data)))
 
+(defn matrix-cols-to-rows
+  "Based on example seen on Twitter - gosh somethings are a lot easier than I first thought"
+  [matrix]
+  (apply map vector matrix))
+
 (defn col
   [n m]
   (map #(get % n) m))
