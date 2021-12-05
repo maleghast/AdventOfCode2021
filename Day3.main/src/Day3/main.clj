@@ -53,7 +53,6 @@
         epsilon (into [] (map #(if (= 0 %) 1 0) gamma))
         str-gamma (str/join gamma)
         str-epsilon (str/join epsilon)]
-    (println gamma)
     (*
      (Long/parseLong str-gamma 2)
      (Long/parseLong str-epsilon 2))))
