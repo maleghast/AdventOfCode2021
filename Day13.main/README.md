@@ -1,6 +1,6 @@
-# Day9.main
+# Day13.main
 
-This is the code for Day #9 of the Advent of Code 2021
+This is the code for Day #13 of the Advent of Code 2021
 
 ## Usage
 
@@ -15,7 +15,7 @@ Run that uberjar:
 
     $ java -jar target/Day2.main-0.1.0-SNAPSHOT.jar
 
-If you remove `version` from `build.clj`, the uberjar will become `target/Day9.main-standalone.jar`.
+If you remove `version` from `build.clj`, the uberjar will become `target/Day13.main-standalone.jar`.
 
 ## Options
 
